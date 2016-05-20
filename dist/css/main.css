@@ -1,0 +1,68 @@
+.chromeperfectpixel-initial-block iframe,
+#chromeperfectpixel-supported-by {
+  display: none !important; }
+
+#__bs_notify__ {
+  display: none !important;
+  opacity: 0 !important; }
+
+html {
+  font-size: 16px; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  line-height: 1em;
+  font-size: 16px; }
+  body p {
+    color: #545353;
+    line-height: 1.5em;
+    font-family: 'Open Sans', sans-serif; }
+
+.content {
+  width: 1200px;
+  margin: auto;
+  padding: 75px 0; }
+
+#section-home {
+  background: #1080f2;
+  text-align: center;
+  color: #fff;
+  padding: 250px 0;
+  position: relative; }
+  #section-home #particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; }
+  #section-home h3 {
+    font-size: 56px;
+    line-height: 1em;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    z-index: 1; }
+  #section-home p {
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+    z-index: 1; }
+
+#services .img-holder {
+  text-align: center; }
+
+#services i {
+  color: #e4473c; }
+
+#services h3 {
+  margin-bottom: 30px;
+  font-size: 34px;
+  font-weight: 300;
+  color: #333;
+  font-family: 'Open Sans', sans-serif; }

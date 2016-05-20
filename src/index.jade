@@ -4,13 +4,58 @@ html(lang="ru")
 
 
     body
-        .page_wrapper.home
+        .page_wrapper
             include ./header.jade
-            .content
+
+            #section-home
+                h3 Keysoft, blissful innovation
+                p Spend less time worrying about front-end and more focusing on your product
+                #particles-js
+                    canvas.particles-js-canvas-el(width="1326" height="663" style="width: 100%; height: 100%;")
+
+            #services
+                .content
+                    .row
+                        .col-md-6
+                            i.fa.fa-globe.fa-2x
+                            h3 Completely flexible, create the landing page you want
+                            p Every section in doFollow is completely optional. You don't need a certain section? Just remove it from the landing page and you are good to go.
+                            p The same goes for adding a section, need some more text or images? Just add them to the template!
+
+
+                        .col-md-6
+                            .img-holder
+                                img(src="img/content/image-twophones.png" alt="Landing Page doFollow")
+                    .row
+                        .col-md-6
+                            .img-holder
+                                img(src="img/content/pad-pen.jpg" alt="Landing Page doFollow")
+                        .col-md-6
+                            i.fa.fa-cogs.fa-2x
+                            h3 Add great animations to your landing page
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                            p
+                                a(href="#") Get more Information
+
+                    .row
+                        .col-md-6
+                            i.fa.fa-clone.fa-2x
+                            h3 Totally flexible and very easy to modify
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                            p
+                                a(href="#") Get more Information
+                        .col-md-6
+                            .img-holder
+                                img(src="img/content/app-phone-hand.jpg" alt="Landing Page doFollow")
+
+
+            #modern_tools
 
 
 
-            include ./footer.jade
+include ./footer.jade
 
 
 
