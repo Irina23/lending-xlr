@@ -1,5 +1,4 @@
-$main-color: #ff4504
-$color-grey: #727272
+$main-color: #1080f2
 
 
 .chromeperfectpixel-initial-block iframe,
@@ -9,6 +8,12 @@ $color-grey: #727272
   display: none !important
   opacity: 0 !important
 
+@font-face
+  font-family: 'Nucleo Outline'
+  src: url('../fonts/nucleo-outline.eot')
+  src: url('../fonts/nucleo-outline.eot') format('embedded-opentype'), url('../fonts/nucleo-outline.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
 
 
 html
@@ -20,6 +25,8 @@ body
   margin: 0
   line-height: 1em
   font-size: 16px
+  h3
+    font-family: 'Open Sans', sans-serif
 
   p
     color: #545353
@@ -45,13 +52,12 @@ body
 
 
 
-.content
-  width: 1200px
-  margin: auto
+.container
+
   padding: 75px 0
 
 #section-home
-  background: #1080f2
+  background: $main-color
   text-align: center
   color: #fff
   padding: 250px 0
@@ -84,10 +90,281 @@ body
   .img-holder
     text-align: center
   i
-    color: #e4473c
+    color: $main-color
   h3
     margin-bottom: 30px
     font-size: 34px
     font-weight: 300
     color: #333
     font-family: 'Open Sans', sans-serif
+
+  .row
+    margin-bottom: 70px
+    &:last-child
+      margin-bottom: 0
+
+
+
+.nc-icon-outline
+  display: inline-block
+  font: 100 32px/1 'Nucleo Outline'
+  speak: none
+  text-transform: none
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+
+
+
+
+.center
+  text-align: center
+#modern_tools
+    .nc-icon-outline
+      color: $main-color
+      margin-bottom: 36px
+      font-size: 40px
+      text-align: center
+
+    h3
+      margin: 0
+      padding-bottom: 25px
+      font-size: 50px
+      letter-spacing: -1px
+      line-height: 40px
+      font-weight: 300
+      font-family: 'Open Sans', sans-serif
+      position: relative
+      &:after
+        position: absolute
+        bottom: 0
+        left: 50%
+        margin-left: -15px
+        width: 30px
+        height: 2px
+        display: block
+        content: ""
+        background: $main-color
+    h4
+      font-size: 20px
+
+    p
+      margin: 25px 0 95px 0
+      color: #666666
+      font-size: 18px
+
+    .col-md-3
+      p
+        color: #666
+        font-size: 15px
+        line-height: 1.5em
+
+
+
+#video
+  position: relative
+  background: url("../img/bg/videobg.jpg")
+  background-size: 100%
+  background-attachment: fixed
+  &:after
+    position: absolute
+    background: rgba(16, 128, 242, 0.9)
+    width: 100%
+    height: 100%
+    top: 0
+    content: ""
+    z-index: 0
+  .container
+    position: relative
+    z-index: 1
+  h3
+    margin: 0
+    padding-bottom: 30px
+    font-size: 50px
+    letter-spacing: -1px
+    line-height: 1em
+    font-weight: 300
+    font-family: 'Open Sans', sans-serif
+    position: relative
+    color: #fff
+
+    &:after
+      position: absolute
+      bottom: 0
+      left: 50%
+      margin-left: -15px
+      width: 30px
+      height: 2px
+      display: block
+      content: ""
+      background: #fff
+
+  p
+    margin: 25px 0 95px 0
+    color: #fff
+    font-size: 18px
+  .video
+    position: relative
+  a
+    &:hover
+      .play-video
+        background-color: rgba(39, 49, 64, 1)
+        transition: 0.2s
+  .play-video
+    position: absolute
+    left: 50%
+    top: 50%
+    margin-left: -38px
+    margin-top: -48px
+    width: 76px
+    height: 76px
+    background-color: rgba(39, 49, 64, 0.6)
+    transition: 0.2s
+    border-radius: 76px
+    cursor: pointer
+    i
+      width: 22px
+      height: 26px
+      color: white
+      font-size: 28px
+      font-weight: 400
+      position: absolute
+      top: 25px
+      left: 30px
+
+#overlay
+  z-index: 3
+  position: fixed
+  background: rgba(84, 110, 122, 0.89)
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  cursor: pointer
+  display: none
+
+.modal_div
+  position: fixed
+  background:  rgba(255, 255, 255, 0.95)
+  z-index: 4
+  display: none
+  opacity: 0
+  border: 5px solid rgba(255, 255, 255, 0.25)
+  border-radius: 3px
+  box-shadow: 0 0px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+  transform: translate3d(-50%, -50%, 0)
+  top: 50%
+  left: 50%
+  &#video-modal
+    .content-holder
+      height: 400px
+
+
+#price, #reviews
+  h3
+    margin: 0
+    padding-bottom: 30px
+    font-size: 50px
+    letter-spacing: -1px
+    line-height: 1em
+    font-weight: 300
+    font-family: 'Open Sans', sans-serif
+    position: relative
+    color: #333
+
+    &:after
+      position: absolute
+      bottom: 0
+      left: 50%
+      margin-left: -15px
+      width: 30px
+      height: 2px
+      display: block
+      content: ""
+      background: $main-color
+  p
+    margin: 25px 0 95px 0
+    color: #333
+    font-size: 18px
+
+#price
+  background: #f5f5f5
+  text-align: center
+  .price_block
+    .col-md-4
+      padding: 20px
+
+      .pricing-block-content
+        box-shadow: 0 1px 2px rgba(0,0,0,0.07)
+        padding: 30px 0
+        background: #fff
+        transition: all 0.2s ease-in-out
+        animation-duration: 1s
+        animation-fill-mode: both
+        animation-name: fadeIn
+        visibility: visible
+
+        &:hover
+          transform: translateY(-5px)
+          box-shadow: 0px 12px 19px rgba(0,0,0,0.25)
+
+        h4
+          font-size: 30px
+          font-weight: 300
+          color: #333
+          font-family: 'Open Sans', sans-serif
+          padding-bottom: 20px
+
+        .pricing
+          background: #f5f5f5
+          padding: 25px 0
+          position: relative
+          &.blue
+            background: $main-color
+            color: #fff
+
+          .price
+            font-size: 62px
+            line-height: 1em
+            display: inline-block
+            font-weight: 300
+            font-family: 'Open Sans', sans-serif
+            margin-bottom: 15px
+            position: relative
+            span
+              position: absolute
+              top: 0
+              left: -20px
+              font-size: 22px
+              line-height: 1em
+
+
+          .price-sub
+            font-style: italic
+            opacity: 0.7
+
+
+        ul
+          margin-bottom: 30px
+          li
+            padding: 11px 0
+            border-bottom: 1px solid #e1e1e1
+            i
+              font-size: 13px
+              margin-right: 10px
+              color: $main-color
+        .button
+          display: inline-block
+          border: 2px solid $main-color
+          background: $main-color
+          color: #fff
+          font-size: 16px
+          line-height: 1em
+          padding: 11px 16px
+          border-radius: 25px
+          transition: all 0.35s
+          &:hover
+            transition: all 0.35s
+            color: $main-color
+            background: none
+            text-decoration: none

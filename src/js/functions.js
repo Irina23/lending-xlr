@@ -144,4 +144,62 @@ jQuery(document).ready(function() {
 
 
 
+    //modal form
+    var overlay = $('#overlay');
+    var open_modal = $('.open-modal');
+    var close = $('.modal_close, #overlay');
+    var modal = $('.modal_div');
+    var videoSRC = $('#video-modal iframe').attr('src');
+    var videoSRCauto = videoSRC + "?autoplay=1";
+
+    open_modal.click( function(event){
+        event.preventDefault();
+
+        var div = $(this).attr('href');
+        overlay.fadeIn(400,
+            function(){
+                $(div)
+                    .css('display', 'block')
+                    .animate({opacity: 1, top: '50%'}, 200);
+                    $('#video-modal iframe').attr('src', videoSRCauto);
+            });
+    });
+
+    close.click( function(){
+        modal
+            .animate({opacity: 0, top: '45%'}, 200,
+                function(){
+                    $(this).css('display', 'none');
+                    overlay.fadeOut(400);
+                    $('#video-modal iframe').attr('src', videoSRC);
+
+                }
+            );
+    });
+
+    //AUTO PLAY YOUTUBE VIDEO
+
+    /*function autoPlayYouTubeModal() {
+        var trigger = $("body").find('.video-open');
+        trigger.click(function() {
+            var theModal = $("#video-modal"),
+                videoSRC = $('#video-modal iframe').attr('src'),
+                videoSRCauto = videoSRC + "?autoplay=1";
+            console.log(videoSRC);
+            $(theModal + ' iframe').attr('src', videoSRCauto);
+            $(theModal + ' button.close').click(function() {
+                $(theModal + ' iframe').attr('src', videoSRC);
+            });
+            $('.modal').click(function() {
+                $(theModal + ' iframe').attr('src', videoSRC);
+            });
+        });
+    }*/
+    $(".video-open").click(function () {
+
+
+
+    });
+
+
 });
