@@ -315,3 +315,10 @@ img{
 .nc-icon-outline.world:before {
     content: "\e631";
 }
+
+#subscribe input::-webkit-input-placeholder {
+    color:#fff;
+}
+#subscribe input::-moz-placeholder {
+    color:#fff;
+}
