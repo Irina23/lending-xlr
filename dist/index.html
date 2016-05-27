@@ -11,7 +11,7 @@
     <!--meta(property="og:url" content="")-->
     <meta name="robots" content="index,follow">
     <link rel="icon" type="image/png" href="img/icons/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:600,400,300&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <link href="css/template.css" rel="stylesheet" type="text/css">
     <link href="bower_components/animate.css/animate.css" rel="stylesheet" type="text/css">
@@ -23,30 +23,32 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#navbar" data-offset="105">
     <div class="page_wrapper">
-      <div id="preloader"></div>
-      <header>
-        <div class="menu-bar hidden">
-          <div class="nav-menu-wrapper">
-            <div class="menu">
-              <div class="menu-holder">
-                <div class="menu-block">
-                  <div class="title">Menu</div>
-                  <ul class="nav">
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="collections.html">COLLECTIONS</a></li>
-                    <li><a href="media.html">MEDIA</a></li>
-                    <li><a href="stockists.html">STOCKISTS</a></li>
-                    <li><a href="list_product.html">BUY ONLINE</a></li>
-                    <li><a href="contacts.html">CONTACTS</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+      <!--#preloader-->
+      <!--div#to-top
+      img(src="img/icons/up_button.svg" alt="toTop")
+      
+      -->
+      <div class="main-navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button data-target="#navbar" data-toggle="collapse" type="button" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#section-home" class="logo"> XLR</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="navigation-pannel nav navbar-nav navbar-right">
+              <li class="active"><a href="#section-home">Home</a></li>
+              <li class="active"><a href="#services">services</a></li>
+              <li><a href="#modern_tools">tools</a></li>
+              <li><a href="#video">video</a></li>
+              <li><a href="#price">price</a></li>
+              <li><a href="#reviews">reviews</a></li>
+              <li><a href="#team">team</a></li>
+              <li><a href="#contact">contact</a></li>
+            </ul>
           </div>
         </div>
-      </header>
+      </div>
       <div id="section-home">
         <h3>Keysoft, blissful innovation</h3>
         <p>Spend less time worrying about front-end and more focusing on your product</p>

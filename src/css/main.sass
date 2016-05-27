@@ -534,6 +534,7 @@ body
     font-size: 30px
     font-weight: 300
     margin: 0
+    line-height: 50px
   form
     >div
       display: inline-block
@@ -569,3 +570,45 @@ body
       background: none
       padding: 0 20px
       margin-right: 20px
+
+
+
+.main-navigation
+  position: fixed
+  z-index: 10
+  width: 100%
+  transition: all 0.35s
+  &.background
+    background: #273140
+    transition: all 0.35s
+  .container
+    padding: 10px 0
+    .logo
+      font-size: 40px
+      font-weight: 600
+      line-height: 1em
+      color: #fff
+      padding-top: 5px
+      float: left
+      &:hover
+        text-decoration: none
+    .navbar-nav
+      li
+        &:first-child
+          display: none
+        &.active
+          a
+            opacity: 1
+            color: #1080f2
+        a
+          color: #fff
+          text-transform: uppercase
+          font-size: 14px
+          opacity: 0.7
+          background: none
+          transition: all 0.35s
+          font-weight: 400
+          &:hover
+            opacity: 1
+            transition: all 0.35s
+            background: none

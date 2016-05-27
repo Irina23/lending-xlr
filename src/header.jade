@@ -1,31 +1,37 @@
+//#preloader
+//div#to-top
+    img(src="img/icons/up_button.svg" alt="toTop")
 
-#preloader
-header
+.main-navigation
+    .container
+        .navbar-header
+            button(data-target="#navbar" data-toggle="collapse" class="navbar-toggle" type="button")
+                span(class="sr-only") Toggle navigation
+                span(class="icon-bar")
+                span(class="icon-bar")
+                span(class="icon-bar")
 
-    .menu-bar.hidden
-        .nav-menu-wrapper
-            .menu
-                .menu-holder
-                    .menu-block
-                        .title Menu
-                        ul.nav
-                            li
-                                a(href="about.html") ABOUT
-                            li
-                                a(href="collections.html") COLLECTIONS
-                            li
-                                a(href="media.html") MEDIA
-                            li
-                                a(href="stockists.html") STOCKISTS
-                            li
-                                a(href="list_product.html") BUY ONLINE
-                            li
-                                a(href="contacts.html") CONTACTS
+            a.logo(href="#section-home")  XLR
 
 
 
+        #navbar.collapse.navbar-collapse
+            ul.navigation-pannel.nav.navbar-nav.navbar-right
+                li.active
+                    a(href='#section-home') Home
+                li.active
+                    a(href="#services") services
+                li
+                    a(href="#modern_tools") tools
+                li
+                    a(href="#video") video
+                li
+                    a(href="#price") price
+                li
+                    a(href="#reviews") reviews
+                li
+                    a(href="#team") team
 
-
-
-
+                li
+                    a(href="#contact") contact
 

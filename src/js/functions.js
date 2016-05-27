@@ -177,27 +177,45 @@ jQuery(document).ready(function() {
             );
     });
 
-    //AUTO PLAY YOUTUBE VIDEO
+    //scroll
+    (function () {
 
-    /*function autoPlayYouTubeModal() {
-        var trigger = $("body").find('.video-open');
-        trigger.click(function() {
-            var theModal = $("#video-modal"),
-                videoSRC = $('#video-modal iframe').attr('src'),
-                videoSRCauto = videoSRC + "?autoplay=1";
-            console.log(videoSRC);
-            $(theModal + ' iframe').attr('src', videoSRCauto);
-            $(theModal + ' button.close').click(function() {
-                $(theModal + ' iframe').attr('src', videoSRC);
-            });
-            $('.modal').click(function() {
-                $(theModal + ' iframe').attr('src', videoSRC);
-            });
+        var $mainNavigation = $(".main-navigation"),
+            $callBack = $('#call_back');
+        $mainNavigation.status = 0;
+        $callBack.status = 0;
+
+        $(document).on('scroll', function () {
+
+            var top = $(this).scrollTop();
+            if (top > 20 && $mainNavigation.status !== 2) {
+                $mainNavigation.addClass("background");
+                $mainNavigation.status = 2;
+            } else if (top < 20 && $mainNavigation.status !== 1) {
+                $mainNavigation.removeClass("background");
+                $mainNavigation.status = 1;
+            }
+
+
         });
-    }*/
-    $(".video-open").click(function () {
+
+    })();
 
 
+    //scroll link menu
+    $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
 
     });
 
