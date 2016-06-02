@@ -154,7 +154,7 @@ jQuery(document).ready(function() {
 
     open_modal.click( function(event){
         event.preventDefault();
-
+        //console.log('open');
         var div = $(this).attr('href');
         overlay.fadeIn(400,
             function(){
@@ -162,44 +162,26 @@ jQuery(document).ready(function() {
                     .css('display', 'block')
                     .animate({opacity: 1, top: '50%'}, 200);
                     $('#video-modal iframe').attr('src', videoSRCauto);
+                    $('body').addClass('no-scroll');
             });
     });
 
     close.click( function(){
+        //console.log('close');
         modal
             .animate({opacity: 0, top: '45%'}, 200,
                 function(){
                     $(this).css('display', 'none');
                     overlay.fadeOut(400);
                     $('#video-modal iframe').attr('src', videoSRC);
+                    $(".success_box").removeClass('show');
+                    $('body').removeClass('no-scroll');
 
                 }
             );
     });
 
-    //scroll
-    (function () {
-
-        var $mainNavigation = $(".main-navigation"),
-            $callBack = $('#call_back');
-        $mainNavigation.status = 0;
-        $callBack.status = 0;
-
-        $(document).on('scroll', function () {
-
-            var top = $(this).scrollTop();
-            if (top > 20 && $mainNavigation.status !== 2) {
-                $mainNavigation.addClass("background");
-                $mainNavigation.status = 2;
-            } else if (top < 20 && $mainNavigation.status !== 1) {
-                $mainNavigation.removeClass("background");
-                $mainNavigation.status = 1;
-            }
-
-
-        });
-
-    })();
+   
 
 
     //scroll link menu
@@ -219,5 +201,112 @@ jQuery(document).ready(function() {
 
     });
 
+
+    var goUp = (function () {
+
+        var $el = $('.scrollTop'),
+            speed = 500,
+            timingFunction = 'swing',
+            state = false,
+            paused = false,
+            plg = {
+                up: function () {
+
+                    paused = true;
+                    state = true;
+
+                    $("html, body").stop().animate({scrollTop:0}, speed, timingFunction, function () {
+
+                        paused = false;
+
+                    }).one('touchstart mousewheel DOMMouseScroll wheel', function () {
+
+                        $(this).stop(false, false).off('touchstart mousewheel DOMMouseScroll wheel');
+                        paused = false;
+
+                    });
+
+                    plg.hide();
+
+                },
+                show: function () {
+
+                    if (!state && !paused) {
+
+                        $el.addClass('opened');
+
+                        state = true;
+
+                    }
+
+                },
+                hide: function () {
+
+                    if (state) {
+
+                        $el.removeClass('opened');
+
+                        state = false;
+
+                    }
+
+                },
+                $el: $el
+            };
+
+        $el.on('click', function () {
+
+            plg.up();
+
+        });
+
+        return plg;
+
+    })();
+    
+    
+    //scroll
+    (function () {
+
+        var $mainNavigation = $(".main-navigation"),
+            $callBack = $('#call_back');
+        $mainNavigation.status = 0;
+        $callBack.status = 0;
+        var winWidth = $(window).width(),
+            winHeight = $(window).height();
+
+        $(document).on('scroll', function () {
+
+            var top = $(this).scrollTop();
+
+            if (top > winHeight / 2) {
+
+                goUp.show();
+
+                if ($callBack.status !== 2) $callBack.removeClass('notactive');
+
+            } else {
+
+                goUp.hide();
+
+                if ($callBack.status !== 1) $callBack.addClass('notactive');
+            }
+
+            if (top > 20 && $mainNavigation.status !== 2) {
+                $mainNavigation.addClass("background");
+                $mainNavigation.status = 2;
+            } else if (top < 20 && $mainNavigation.status !== 1) {
+                $mainNavigation.removeClass("background");
+                $mainNavigation.status = 1;
+            }
+
+
+        });
+
+    })();
+
+
+
+    
 
 });

@@ -80,7 +80,7 @@ html(lang="ru")
                 .container
                     .row
                         .col-lg-12.text-center
-                            h3 Our video
+                            h3 Видео обзор
                             p Partnership or temporary organization perfectly designed.
                     .row.video
                         .col-lg-12.text-center
@@ -93,7 +93,7 @@ html(lang="ru")
                 .container
                     .row
                         .col-lg-12.text-center
-                            h3 A price for your budget
+                            h3 Цена на тарифы
                             p Student or professional we have the right price for you
                     .row.price_block
                         .col-md-4
@@ -104,8 +104,9 @@ html(lang="ru")
                                         span $
                                         | 19
 
-                                    .price-sub The standard version
-                                ul
+                                    .price-sub Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+
+                                ///ul
                                     li
                                         i.fa.fa-check
                                         | 5 Downloads
@@ -127,12 +128,15 @@ html(lang="ru")
                             .pricing-block-content(style="animation-delay: 0.6s", data-wow-delay="0.6s")
                                 h4 Student
                                 .pricing.blue
-                                    .price
+                                    //.price
                                         span $
                                         | 29
 
-                                    .price-sub The standard version
-                                ul
+                                    .price-sub Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                                        | В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
+
+
+                                //ul
                                     li
                                         i.fa.fa-plus
                                         | Everything In BASIC, Including:
@@ -154,12 +158,14 @@ html(lang="ru")
                             .pricing-block-content(style="animation-delay: 0.8s", data-wow-delay="0.8s")
                                 h4 Business
                                 .pricing
-                                    .price
+                                    //.price
                                         span $
                                         | 49
 
-                                    .price-sub The standard version
-                                ul
+                                    .price-sub Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+                                        | В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
+
+                                //ul
                                     li
                                         i.fa.fa-plus
                                         | Everything In STANDARD, Including:
@@ -181,7 +187,7 @@ html(lang="ru")
                 .container
                     .row
                         .col-lg-12.text-center
-                            h3 What customers are saying
+                            h3 Что говорят клиенты
                             p Don't just take our word for it
                     .row
                         .col-md-4.item-review
@@ -203,13 +209,14 @@ html(lang="ru")
                             .text-review
                                 q Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
                             .name Thomas Doe - Happy Customer
-                .review-img
+
+            .review-img
 
             #team
                 .container
                     .row
                         .col-lg-12.text-center
-                            h3 Our team
+                            h3 Наша команда
                             p Our team maintains an effective mix of development experience and seasoned leadership.
 
                     .row
@@ -270,29 +277,112 @@ html(lang="ru")
             #subscribe
                 .container
                     .row
-                        .col-md-6
+                        .col-md-6.col-xs-12
                             h3 Subscribe to receive free updates!
 
-                        .col-md-6
-                            form.subscribe
-                                div
-                                    input(type="text", placeholder="Email", data-validate="email")
-                                a.button(type="submit") Подписаться
+                        .col-md-6.col-xs-12
+                            .row
+                                form.subscribe
+                                    .col-md-8
+                                        input(type="text", placeholder="Email", data-validate="email")
+                                    .col-md-4
+                                        a.button(type="submit") Подписаться
 
 
             #contact
                 .container
                     .row
                         .col-lg-12.text-center
-                            h3 Contact
+                            h3 Контакты
                             p Deserunt nesciunt sed molestiae quos, dolor eaque quis facilis tempora consequuntu.
 
+                    .row
+                        .col-md-8
 
+                            .success_box Спасибо! В ближайшее время с Вами свяжется наш менеджер.
+
+                            form#contact-form.contact(action='mailto:vitaliya.intertech@gmail.com', name="contact", ectype="text/plain", method='post')
+
+                                .row
+                                    .col-md-6.cf
+                                            input.contact-input.white-input(required='', name='contact_names', placeholder='Имя', type='text', data-validate="name")
+                                            span.error Поле обязательное для заполнения
+                                    .col-md-6.cf
+                                            input.contact-input.white-input(required='', name='contact_email', placeholder='Email/Телефон', type='text', data-validate="empty")
+                                            span.error Введены некорректные символы
+
+                                .row
+                                    .col-md-12.cf
+                                        textarea.contact-commnent.white-input(rows='2', cols='20', name='contact_message', placeholder='Сообщение', data-validate="empty")
+                                        span.error Поле обязательное для заполнения
+
+                                .row
+                                    .col-md-12
+                                        a#submit-button.contact-submit.button(type='submit') Отправить
+
+                        .col-md-4
+                            div Телефон:
+                                a(href="tel:+38 0973040144") +38 0973040144
+                            div E-mail:
+                                a(href="mailto:vitaliya.intertech@gmail.com") vitaliya.intertech@gmail.com
+                                a(href="mailto:home1.intertech@gmail.com") home1.intertech@gmail.com
+
+                            div
+                                a.open-modal(href="#protection_personal_information") Договор о защите персональных данных
+                                a.open-modal(href="#terms_use") Пользовательское соглашение
+
+
+
+            #copyright
+                .footer-logo
+                    span.blue Inter
+                    | Tech
+                div Copyright © 2016. Designed &amp; Developed by&nbsp;
+                    a(href="http://intertechcompany.com/" target="_blank") Intertech
+
+
+
+            a.scrollTop(href="#")
+                img(src="img/icons/up_button.svg")
+                span up
+
+            a#call_back.open-modal(href="#call_back_form") Задать вопрос
             #overlay
+
             #video-modal.modal_div
                 .content-holder
                     iframe(width="712" height="400" src="https://www.youtube.com/embed/kPDnw3_1GOI" frameborder="0" allowfullscreen)
 
+            #call_back_form.modal_div
+                .modal_close
+                .success_box Спасибо! В ближайшее время с Вами свяжется наш менеджер.
+                .content-holder
+
+                    .overflow-holder
+
+                        form(action='mailto:vitaliya.intertech@gmail.com', name="call_back", ectype="text/plain", method='post')
+                            h3 Задать вопрос
+                            div.cf
+                                input(type="text" placeholder="Имя" data-validate="name")
+                                span.error Введены некорректные символы
+                            div.cf
+                                input(type="text" placeholder="Телефон/Email" data-validate="empty")
+                                span.error Введены некорректные символы
+
+                            div.cf
+                                textarea( placeholder="Сообщение" data-validate="empty")
+                                span.error Поле обязательное для заполнения
+                            a.button.submit(type="submit") Отправить
+
+            #protection_personal_information.modal_div
+                .modal_close
+                .content-holder
+                    p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
+
+            #terms_use.modal_div
+                .modal_close
+                .content-holder
+                    p Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
 
             include ./footer.jade
 
