@@ -25,7 +25,12 @@ jQuery(document).ready(function() {
 
 
     jQuery(window).load(function() {
-        if ($(window).width() > 960) {
+
+        $('#preloader').fadeOut('slow', function() {
+            $(this).css("display", "none");
+        });
+        
+        //if ($(window).width() > 960) {
 
             particlesJS("particles-js", {
                 "particles": {
@@ -138,7 +143,9 @@ jQuery(document).ready(function() {
                 "retina_detect": true
             });
 
-        }
+    //    }
+
+        new WOW().init();
 
     });
 
@@ -161,8 +168,8 @@ jQuery(document).ready(function() {
                 $(div)
                     .css('display', 'block')
                     .animate({opacity: 1, top: '50%'}, 200);
-                    $('#video-modal iframe').attr('src', videoSRCauto);
                     $('body').addClass('no-scroll');
+                    //$('#video-modal iframe').attr('src', videoSRCauto);
             });
     });
 
@@ -173,17 +180,61 @@ jQuery(document).ready(function() {
                 function(){
                     $(this).css('display', 'none');
                     overlay.fadeOut(400);
-                    $('#video-modal iframe').attr('src', videoSRC);
+                    //$('#video-modal iframe').attr('src', videoSRC);
                     $(".success_box").removeClass('show');
                     $('body').removeClass('no-scroll');
+                    $( "#price_checkbox" ).prop( "checked", false );
+                }
+            );
+    });
+
+    $(this).keydown(function(eventObject){
+        if (eventObject.which == 27)
+            modal.animate({opacity: 0}, 200,
+                function(){
+                    $(this).css('display', 'none');
+                    overlay.fadeOut(400);
+                    //$('#video-modal iframe').attr('src', videoSRC);
+                    $(".success_box").removeClass('show');
+                    $('body').removeClass('no-scroll');
+                    $( "#price_checkbox" ).prop( "checked", false );
+
+
 
                 }
             );
     });
 
-   
+    jQuery("#price_checkbox").click(function () {
+
+        modal.animate({opacity: 0}, 200,
+            function(){
+                $("#price_modal").css('display', 'none');
+                //$('body').removeClass('no-srcoll');
+
+            }
+        );
+        overlay.fadeIn(400,
+            function(){
+                $("#price_form")
+                    .css('display', 'block')
+                    .animate({opacity: 1}, 200);
+                //$('body').addClass('no-srcoll');
+            });
+    });
 
 
+
+    //click button order
+    $('.order_type').click(function () {
+        //console.log(e);
+        var dataprice = $(this).attr('data-price');
+        //console.log(dataprice);
+        $("#price_form input[type='hidden']").attr("value", dataprice);
+    });
+    
+    
+    
     //scroll link menu
     $(function() {
         $('a[href*="#"]:not([href="#"])').click(function() {
